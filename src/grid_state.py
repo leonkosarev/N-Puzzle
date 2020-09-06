@@ -32,7 +32,8 @@ class GridState():
 
     def manhattan_distance(self, x_curr, y_curr, x_goal, y_goal):
         return abs(x_curr-x_goal)+abs(y_curr-y_goal)
-
+    
+    # Calculates the heuristic score of the grid using manhattan distance
     def calculate_potential(self):
         for tile in self.curr_state:
             i_curr = self.curr_state.index(tile)
@@ -40,12 +41,6 @@ class GridState():
             x_curr, y_curr = i_curr // int(np.sqrt(len(self.curr_state))), i_curr % int(np.sqrt(len(self.curr_state)))
             x_goal, y_goal = i_goal // int(np.sqrt(len(self.curr_state))), i_goal % int(np.sqrt(len(self.curr_state)))
             self.score += self.manhattan_distance(x_curr, y_curr, x_goal, y_goal)
-
-    def calculate_potential_two(self):
-        self.score = self.step
-        for curr_tile, goal_tile in zip(self.curr_state, self.goal_state):
-            if (curr_tile != goal_tile):
-                self.score += 1
 
 
 
