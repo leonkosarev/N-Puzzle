@@ -1,5 +1,6 @@
 import numpy as np
 
+# Describes a node in a sequence of grid moves.
 class GridState():
     def __init__(self, curr_state, goal_state, step, parent = None):
         self.curr_state = curr_state
