@@ -22,7 +22,8 @@ class GridSolver():
     def get_summary(self):
         return self.summary
 
-
+    # Solves grid using A* algorithm and manhattan distance heuristic. 
+    # The move sequence is inserted into self.path
     def solve_grid(self):
         step = 0
         visited_nodes = set()
