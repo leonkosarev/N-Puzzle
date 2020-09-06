@@ -3,6 +3,7 @@ from grid_state import GridState
 import numpy as np
 import time
 
+# Class for describing and solving N-Puzzle configurations of any size
 class GridSolver():
     def __init__(self, init_state, goal_state, max_iter=500000):
         self.init_state = init_state
