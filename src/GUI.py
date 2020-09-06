@@ -159,8 +159,8 @@ def redraw_window(win, board, time, steps = None):
     win.fill((255, 255, 255))
     # Draw time
     fnt = pygame.font.SysFont("comicsans", 40)
-    #text = fnt.render("Time: " + format_time(time), 1, (0, 0, 0))
-    #win.blit(text, (540 - 160, 560))
+    text = fnt.render("Time: " + format_time(time), 1, (0, 0, 0))
+    win.blit(text, (540 - 160, 560))
     # Draw steps
     if steps:
         text = fnt.render("Steps: " + str(steps), 1, (255, 0, 0))
