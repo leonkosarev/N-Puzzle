@@ -7,8 +7,6 @@ import grid_solver
 import numpy as np
 import random
 
-size = 4
-
 class Grid:
     def __init__(self, size, width, height, win):
         self.size = size
@@ -41,8 +39,6 @@ class Grid:
         row, col = self.selected
         (a,b) = self.find_neighbour_gap()
         if a != -1 and b != -1:
-            # self.cubes[a][b].value = self.cubes[row][col].value
-            # self.cubes[row][col].value = 0
             self.board[a][b] = self.board[row][col]
             self.board[row][col] = 0
             self.update_grid()
@@ -121,7 +117,7 @@ class Cube:
     def draw(self, win):
         fnt = pygame.font.SysFont("comicsans", 40)
 
-        gap = self.width / size
+        gap = self.width / self.grid_size
         x = self.col * gap
         y = self.row * gap
 
@@ -133,27 +129,7 @@ class Cube:
             win.blit(text, (x + (gap / 2 - text.get_width() / 2), y + (gap / 2 - text.get_height() / 2)))
 
         if self.selected:
-            pygame.draw.rect(win, (255, 0, 0), (x, y, gap, gap), size)
-
-
-    def draw_change(self, win, g=True):
-        fnt = pygame.font.SysFont("comicsans", 40)
-
-        gap = self.width / self.size
-        x = self.col * gap
-        y = self.row * gap
-
-        pygame.draw.rect(win, (255, 255, 255), (x, y, gap, gap), 0)
-
-        text = fnt.render(str(self.value), 1 , (0,0,0))
-        win.blit(text, (x + (gap / 2 - text.get_width() / 2), y + (gap / 2 - text.get_height() / 2)))
-        if g:
-            pygame.draw.rect(win, (0, 255, 0), (x, y, gap, gap), self.size)
-        else:
-            pygame.draw.rect(win, (255, 0, 0), (x, y, gap, gap), self.size)
-
-    def set(self, val):
-        self.value = val
+            pygame.draw.rect(win, (255, 0, 0), (x, y, gap, gap), self.grid_size)
 
 def redraw_window(win, board, time, steps = None):
     win.fill((255, 255, 255))
@@ -192,6 +168,7 @@ def solvable(order):
     return count % 2 == 0
 
 def main():
+     size = int(input("Enter grid size: "))
      goal_state = [[size * i + j + 1 for j in range(size)] for i in range(size)]
      goal_state[size - 1][size - 1] = 0
      win = pygame.display.set_mode((540, 600))
