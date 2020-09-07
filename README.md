@@ -31,7 +31,7 @@ The puzzle includes a grid of square tiles and a single gap. The player has to r
 The app includes a graphical user interface (GUI) that allows the user to choose the size of the puzzle, shuffle it, and solve it manually or automatically.
 <p align="center">
   
-### Manual/ Automatic Solving:
+**Manual/ Automatic Solving:**
 
 <img align="center" width="334" height="389" src="imgs/slide_example.gif"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img align="center" width="334" height="389" src="imgs/solver_example.gif">
 
