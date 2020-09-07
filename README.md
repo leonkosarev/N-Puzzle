@@ -17,11 +17,11 @@ various tools such as graph algorithms and heuristics are used in order to find 
 
 The puzzle includes a grid of square tiles and a single gap. The player has to rearrange the grid by sliding the tiles until the final configurartion is reached.
 
-### Single move example:
+**Single move example:**
 
 ![alt text](imgs/15_puzzle.png)
 
-### Final configuartion:
+**Final configuartion:**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![alt text](imgs/final_configuararion.png)
