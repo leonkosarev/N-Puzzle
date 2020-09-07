@@ -1,7 +1,9 @@
 import numpy as np
 
-# Describes a node in a sequence of grid moves.
+
 class GridState():
+    # Describes a node in a sequence of grid moves.
+    
     def __init__(self, curr_state, goal_state, step, parent = None):
         self.curr_state = curr_state
         self.goal_state = goal_state
@@ -34,8 +36,9 @@ class GridState():
     def manhattan_distance(self, x_curr, y_curr, x_goal, y_goal):
         return abs(x_curr-x_goal)+abs(y_curr-y_goal)
     
-    # Calculates the heuristic score of the grid using manhattan distance
     def calculate_potential(self):
+        # Calculates the heuristic score of the grid using manhattan distance
+        
         for tile in self.curr_state:
             i_curr = self.curr_state.index(tile)
             i_goal = self.goal_state.index(tile)
