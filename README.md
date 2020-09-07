@@ -8,7 +8,7 @@ Language: **Python**
 
 Tools: **Pygame**, **NumPy**
 
-## General Description: 
+## General Description
 
 The purpose of the application is to build an interactive N-Puzzle of variable size using a graphical user interface (GUI). In addition, 
 various tools such as graph algorithms and heuristics are used in order to find the optimal solution to the puzzle.
