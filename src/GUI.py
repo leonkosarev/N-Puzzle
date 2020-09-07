@@ -186,7 +186,7 @@ def format_time(secs):
 def solvable(order):
     count = 0
     for i in range(len(order)):
-        for j in range(i+1, 9):
+        for j in range(i+1, len(order)):
             if order[j] and order[i] > order[j]:
                 count += 1
     return count % 2 == 0
