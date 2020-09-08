@@ -8,6 +8,8 @@ import numpy as np
 import random
 
 class Grid:
+    # Graphical representation of a grid
+    
     def __init__(self, size, width, height, win):
         self.size = size
         self.board = [[size*i + j + 1 for j in range(size)] for i in range(size)]
@@ -27,19 +29,25 @@ class Grid:
                 self.cubes[i][j].value = self.board[i][j]
 
     def find_neighbour_gap(self):
+        # If the empty tile is a neighbour of the selected tile, 
+        # returns the coordinates of the empty tile. Otherwise returns None.
+        
         row, col = self.selected
         neighbours = [(row-1, col), (row, col-1), (row+1, col), (row, col+1)]
         for (a,b) in neighbours:
             if 0 <= a < len(self.cubes) and 0 <= b < len(self.cubes[row]):
                 if self.cubes[a][b].value == 0:
                     return (a,b)
-        return (-1,-1)
+        return None
 
     def move(self):
+        # Slides the selected tile into the gap if possible.
+        # Otherwise does nothing.
+        
         row, col = self.selected
-        (a,b) = self.find_neighbour_gap()
-        if a != -1 and b != -1:
-            self.board[a][b] = self.board[row][col]
+        target = self.find_neighbour_gap()
+        if target:
+            self.board[target[0]][target[1]] = self.board[row][col]
             self.board[row][col] = 0
             self.update_grid()
             return True
